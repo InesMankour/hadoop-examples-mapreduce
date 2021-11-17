@@ -1,7 +1,7 @@
 package com.opstty.job;
 
-import com.opstty.mapper.MaxHeightSpeciesMapper;
-import com.opstty.reducer.MaxHeightSpeciesReducer;
+import com.opstty.mapper.TallestTreeMapper;
+import com.opstty.reducer.TallestTreeReducer;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.FloatWritable;
@@ -11,7 +11,7 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 
-public class MaxHeightSpecies {
+public class TallestTree {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
         String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
@@ -20,10 +20,10 @@ public class MaxHeightSpecies {
             System.exit(2);
         }
         Job job = Job.getInstance(conf, "maxHeightSpecies");
-        job.setJarByClass(MaxHeightSpecies.class);
-        job.setMapperClass(MaxHeightSpeciesMapper.class);
-        job.setCombinerClass(MaxHeightSpeciesReducer.class);
-        job.setReducerClass(MaxHeightSpeciesReducer.class);
+        job.setJarByClass(TallestTree.class);
+        job.setMapperClass(TallestTreeMapper.class);
+        job.setCombinerClass(TallestTreeReducer.class);
+        job.setReducerClass(TallestTreeReducer.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FloatWritable.class);
         for (int i = 0; i < otherArgs.length - 1; ++i) {

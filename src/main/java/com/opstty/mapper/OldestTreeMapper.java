@@ -7,7 +7,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
-public class OldestDistrictMapper extends Mapper<Object, Text, NullWritable, MapWritable> {
+public class OldestTreeMapper extends Mapper<Object, Text, NullWritable, MapWritable> {
     public int curr_line = 0;
 
     public void map(Object key, Text value, Context context) throws IOException, InterruptedException {

@@ -11,7 +11,7 @@ import org.apache.hadoop.io.MapWritable;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.mapreduce.Reducer;
 
-public class OldestDistrictReducer extends Reducer<NullWritable, MapWritable, IntWritable, IntWritable> {
+public class OldestTreeReducer extends Reducer<NullWritable, MapWritable, IntWritable, IntWritable> {
     public void reduce(NullWritable key, Iterable<MapWritable> values, Context context)
             throws IOException, InterruptedException {
 

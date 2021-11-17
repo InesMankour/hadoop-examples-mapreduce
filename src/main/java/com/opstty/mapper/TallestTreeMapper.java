@@ -5,7 +5,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
-public class MaxHeightSpeciesMapper extends Mapper<Object, Text, Text, FloatWritable> {
+public class TallestTreeMapper extends Mapper<Object, Text, Text, FloatWritable> {
     public int curr_line = 0;
 
     public void map(Object key, Text value, Context context) throws IOException, InterruptedException {

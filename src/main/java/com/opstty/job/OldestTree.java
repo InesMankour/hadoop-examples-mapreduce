@@ -1,8 +1,8 @@
 
 package com.opstty.job;
 
-import com.opstty.mapper.OldestDistrictMapper;
-import com.opstty.reducer.OldestDistrictReducer;
+import com.opstty.mapper.OldestTreeMapper;
+import com.opstty.reducer.OldestTreeReducer;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -14,7 +14,7 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 
-public class OldestTreeDistrict {
+public class OldestTree {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
         String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
@@ -23,11 +23,11 @@ public class OldestTreeDistrict {
             System.exit(2);
         }
         Job job = Job.getInstance(conf, "oldestTreeDistrictReduce");
-        job.setJarByClass(OldestTreeDistrict.class);
-        job.setMapperClass(OldestDistrictMapper.class);
+        job.setJarByClass(OldestTree.class);
+        job.setMapperClass(OldestTreeMapper.class);
         //job.setCombinerClass(OldestDistrictReduceReducer.class);
         // The Mapper and Reducer have mismatch key value output types
-        job.setReducerClass(OldestDistrictReducer.class);
+        job.setReducerClass(OldestTreeReducer.class);
         job.setMapOutputKeyClass(NullWritable.class);
         job.setMapOutputValueClass(MapWritable.class);
         job.setOutputKeyClass(IntWritable.class);

@@ -16,7 +16,7 @@ public class Species {
         Configuration conf = new Configuration();
         String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
         if (otherArgs.length < 2) {
-            System.err.println("Usage: treeSpecies <in> [<in>...] <out>");
+            System.err.println("Usage: Species <in> [<in>...] <out>");
             System.exit(2);
         }
         Job job = Job.getInstance(conf, "treeSpecies");
