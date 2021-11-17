@@ -1,4 +1,4 @@
-# LAB 2 YARN MAP REDUCE
+# LAB 2 YARN MAP REDUCE  ---- https://github.com/InesMankour/hadoop-examples-mapreduce
 
 ```
 [ines.mankour@hadoop-edge01 ~]$ hdfs dfs -ls
